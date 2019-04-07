@@ -1,28 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SME.Pedagogico.Log.Models
 {
-    public class User
+    public class User : Abstracts.Table
     {
         #region ==================== ATTRIBUTES ====================
-        public string UserId { get; set; }
-        public string Username { get; set; }
+
+        public string UserId { get; set; } = null;
+        public string Username { get; set; } = null;
 
         public virtual List<Entry> EntryList { get; set; } = new List<Entry>();
+
         #endregion ==================== ATTRIBUTES ====================
-
-
-
-        #region ==================== CONSTRUCTORS ====================
-        #endregion ==================== CONSTRUCTORS ====================
-
-
-
-        #region ==================== METHODS ====================
-        #endregion ==================== METHODS ====================
     }
 }
