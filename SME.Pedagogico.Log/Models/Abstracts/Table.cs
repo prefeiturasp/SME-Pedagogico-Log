@@ -10,8 +10,6 @@ namespace SME.Pedagogico.Log.Models.Abstracts
 
         #endregion ==================== ATTRIBUTES ====================
 
-
-
         #region ==================== METHODS ====================
 
         public virtual void NewId()

@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SME.Pedagogico.Log
 {
     public class LogManager
     {
         #region ==================== ATTRIBUTES ====================
+
         private Contexts.SmeLogContext db;
+
         #endregion ==================== ATTRIBUTES ====================
 
-
-
         #region ==================== CONSTRUCTORS ====================
+
         public LogManager()
         {
             db = new Contexts.SmeLogContext();
@@ -24,11 +22,11 @@ namespace SME.Pedagogico.Log
         {
             db = new Contexts.SmeLogContext(connectionString);
         }
+
         #endregion ==================== CONSTRUCTORS ====================
 
-
-
         #region ==================== METHODS ====================
+
         // Criar método genérico para buscar objetos pelo código
 
         public bool AddEntry(string description, string actionCode, string applicationCode, string ip, string machineName, string permissionCode, string userId, string username)
@@ -111,6 +109,7 @@ namespace SME.Pedagogico.Log
                 return (false);
             }
         }
+
         #endregion ==================== METHODS ====================
     }
 }
