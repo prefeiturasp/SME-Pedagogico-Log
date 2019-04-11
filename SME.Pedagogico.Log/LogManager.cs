@@ -1,4 +1,6 @@
 ﻿using System;
+using SME.Pedagogico.Log.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SME.Pedagogico.Log
@@ -100,6 +102,7 @@ namespace SME.Pedagogico.Log
                     entry.User.Username = username;
                 }
 
+                db.Add(entry);
                 db.SaveChanges();
 
                 return (true);
@@ -110,6 +113,31 @@ namespace SME.Pedagogico.Log
             }
         }
 
+        /// <summary>
+        /// Listar todas as Entradas
+        /// </summary>
+        /// <returns></returns>
+        public List<Entry> ListAll()
+        {
+            List<Entry> allEntries = new List<Models.Entry>();
+            allEntries = db.Entries.ToList();
+
+            return allEntries;
+        }
+
+        /// <summary>
+        /// Listar as Entradas por Data
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public List<Entry> ListAllByDate(DateTime date)
+        {
+            List<Entry> allEntriesByDate = new List<Models.Entry>();
+            allEntriesByDate = db.Entries
+                                .Where(x=>x.Date == date).ToList();
+
+            return allEntriesByDate;
+        }
         #endregion ==================== METHODS ====================
     }
 }
